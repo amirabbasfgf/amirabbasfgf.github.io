@@ -14,7 +14,6 @@
         body {
             font-family: 'Vazir', sans-serif;
             background: var(--background);
-            background-size: cover;
             margin: 0;
             padding: 0;
             display: flex;
@@ -29,18 +28,24 @@
             --background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
             --card-bg: rgba(255, 255, 255, 0.9);
             --text-color: #333;
-            --social-color: #3a1c71;
             --button-bg: #ffccd5;
             --button-hover-bg: #ff8a9a;
+            --options-bg: white;
+            --options-hover-bg: #f1f1f1;
+            --options-text-color: #333;
+            --copy-message-color: green;
         }
 
         [data-theme="dark"] {
             --background: radial-gradient(circle, rgba(32,32,32,1) 0%, rgba(48,48,48,1) 100%);
             --card-bg: rgba(48, 48, 48, 0.9);
             --text-color: #ddd;
-            --social-color: #ffccd5;
             --button-bg: #555;
-            --button-hover-bg: #444;
+            --button-hover-bg: #ffffff;
+            --options-bg: #333;
+            --options-hover-bg: #444;
+            --options-text-color: #ddd;
+            --copy-message-color: #0f0;
         }
 
         .container {
@@ -48,7 +53,6 @@
             justify-content: center;
             align-items: center;
             height: 100%;
-            position: relative;
             padding: 15px;
             box-sizing: border-box;
         }
@@ -65,43 +69,18 @@
             backdrop-filter: blur(10px);
             overflow: hidden;
             box-sizing: border-box;
-            position: relative;
             color: var(--text-color);
         }
 
-        .profile-header {
-            margin-bottom: 25px;
-        }
-
-        .profile-pic {
-            background-image: url('https://via.placeholder.com/100');
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-
-        .profile-header h2 {
+        .profile-header h2, .profile-header h3 {
             margin: 10px 0 5px;
-            font-size: 22px;
             color: var(--text-color);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .profile-header h3 {
-            margin: 0;
-            font-size: 18px;
-            color: #666;
         }
 
         .profile-body {
             font-size: 16px;
             line-height: 1.8;
-            color: #555;
+            color: var(--text-color);
         }
 
         .contact {
@@ -115,9 +94,8 @@
             padding: 10px;
             margin: 15px 0;
             font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
             cursor: pointer;
-            position: relative;
+            transition: background-color 0.3s, color 0.3s;
             display: inline-block;
         }
 
@@ -132,7 +110,7 @@
 
         .copy-message {
             display: none;
-            color: green;
+            color: var(--copy-message-color);
             margin-top: 10px;
             font-size: 14px;
         }
@@ -143,7 +121,7 @@
             top: 40px;
             left: 50%;
             transform: translateX(-50%);
-            background: white;
+            background: var(--options-bg);
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -155,16 +133,13 @@
             padding: 10px;
             cursor: pointer;
             transition: background 0.3s;
+            color: var(--options-text-color);
             display: flex;
             align-items: center;
         }
 
         .options div:hover {
-            background: #f1f1f1;
-        }
-
-        .options i {
-            margin-left: 5px;
+            background: var(--options-hover-bg);
         }
 
         .social-media {
@@ -174,7 +149,7 @@
         }
 
         .social-media a {
-            color: var(--social-color);
+            color: var(--text-color);
             text-decoration: none;
             transition: transform 0.3s, color 0.3s;
         }
@@ -189,40 +164,6 @@
         .social-media a:hover {
             transform: scale(1.2);
             color: var(--button-hover-bg);
-        }
-
-        .separator {
-            height: 1px;
-            background-color: #ddd;
-            margin: 20px 0;
-        }
-
-        .actions {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .like-btn {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .like-btn i {
-            font-size: 24px;
-            color: var(--button-hover-bg);
-        }
-
-        .like-btn:hover {
-            transform: scale(1.2);
-        }
-
-        .count {
-            font-size: 14px;
-            margin-top: 5px;
-            color: var(--text-color);
         }
 
         .theme-toggle {
@@ -249,61 +190,11 @@
             .profile-card {
                 padding: 20px;
             }
-
-            .profile-header h2 {
-                font-size: 20px;
-            }
-
-            .profile-header h3 {
-                font-size: 16px;
-            }
-
-            .profile-body {
-                font-size: 14px;
-            }
-
-            .social-media i {
-                font-size: 22px;
-            }
-
-            .actions {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .like-btn {
-                margin-bottom: 10px;
-            }
         }
 
         @media (max-width: 480px) {
             .profile-card {
                 padding: 15px;
-            }
-
-            .profile-header h2 {
-                font-size: 18px;
-            }
-
-            .profile-header h3 {
-                font-size: 14px;
-            }
-
-            .profile-body {
-                font-size: 12px;
-            }
-
-            .social-media i {
-                font-size: 20px;
-            }
-
-            .actions {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .like-btn {
-                margin-bottom: 10px;
             }
         }
     </style>
@@ -314,7 +205,6 @@
     <div class="container">
         <div class="profile-card">
             <div class="profile-header">
-                <div class="profile-pic"></div>
                 <h2>امیرعباس فغفوری</h2>
                 <h3>amirabbas fgf</h3>
             </div>
@@ -326,7 +216,8 @@
                             <div onclick="copyToClipboard('09101476054')"><i class="fas fa-copy"></i> کپی</div>
                             <div onclick="openDialer('09101476054')"><i class="fas fa-phone"></i> تماس</div>
                             <div onclick="sendSMS('09101476054')"><i class="fas fa-sms"></i> پیامک</div>
-                            <div onclick="openWhatsApp('09101476054')"><i class="fab fa-whatsapp"></i> واتس‌اپ</div>
+                            <div onclick="openWhatsApp('09101476054')"><i class="fab fa-whatsapp"></i> واتساپ</div>
+                            <div onclick="shareContact('09101476054')"><i class="fas fa-share"></i> اشتراک‌گذاری</div>
                         </div>
                     </p>
                     <div class="copy-message">شماره کپی شد!</div>
@@ -334,21 +225,18 @@
             </div>
             <div class="social-media">
                 <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
+        document.addEventListener('DOMContentLoaded', () => {
             const phoneNumberElement = document.getElementById('phone-number');
             const themeToggle = document.getElementById('theme-toggle');
 
             phoneNumberElement.addEventListener('mouseenter', showOptions);
             phoneNumberElement.addEventListener('click', showOptions);
-            document.addEventListener('click', function(event) {
+            document.addEventListener('click', (event) => {
                 if (!phoneNumberElement.contains(event.target)) {
                     hideOptions();
                 }
@@ -370,11 +258,12 @@
             document.getElementById('phone-number').classList.remove('active');
         }
 
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                document.querySelector('.copy-message').style.display = 'block';
+        function copyToClipboard(number) {
+            navigator.clipboard.writeText(number).then(() => {
+                const copyMessage = document.querySelector('.copy-message');
+                copyMessage.style.display = 'block';
                 setTimeout(() => {
-                    document.querySelector('.copy-message').style.display = 'none';
+                    copyMessage.style.display = 'none';
                 }, 2000);
             });
         }
@@ -388,18 +277,35 @@
         }
 
         function openWhatsApp(number) {
-            window.location.href = `https://wa.me/${number}`;
+            window.open(`https://wa.me/${number}`, '_blank');
+        }
+
+        function shareContact(number) {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Share Contact',
+                    text: `Here is the contact number: ${number}`,
+                });
+            } else {
+                alert('Sharing not supported on this browser');
+            }
         }
 
         function toggleTheme() {
-            const theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-            setTheme(theme);
-            localStorage.setItem('theme', theme);
+            const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            setTheme(currentTheme);
         }
 
         function setTheme(theme) {
-            document.body.dataset.theme = theme;
-            document.getElementById('theme-toggle').innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+
+            const themeIcon = document.querySelector('.theme-toggle i');
+            if (theme === 'dark') {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
         }
     </script>
 </body>
