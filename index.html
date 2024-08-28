@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سید مصطفى موسوی - رزومه</title>
+    <title>امیرعباس فغفوری</title>
     <style>
         @keyframes float {
             0% { transform: translateY(0); }
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Vazir', sans-serif;
-            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            background: var(--background);
             background-size: cover;
             margin: 0;
             padding: 0;
@@ -22,6 +22,25 @@
             align-items: center;
             height: 100vh;
             direction: rtl;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        :root {
+            --background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --text-color: #333;
+            --social-color: #3a1c71;
+            --button-bg: #ffccd5;
+            --button-hover-bg: #ff8a9a;
+        }
+
+        [data-theme="dark"] {
+            --background: radial-gradient(circle, rgba(32,32,32,1) 0%, rgba(48,48,48,1) 100%);
+            --card-bg: rgba(48, 48, 48, 0.9);
+            --text-color: #ddd;
+            --social-color: #ffccd5;
+            --button-bg: #555;
+            --button-hover-bg: #444;
         }
 
         .container {
@@ -35,7 +54,7 @@
         }
 
         .profile-card {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: var(--card-bg);
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
@@ -47,6 +66,7 @@
             overflow: hidden;
             box-sizing: border-box;
             position: relative;
+            color: var(--text-color);
         }
 
         .profile-header {
@@ -68,7 +88,7 @@
         .profile-header h2 {
             margin: 10px 0 5px;
             font-size: 22px;
-            color: #333;
+            color: var(--text-color);
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
@@ -90,7 +110,7 @@
         }
 
         .contact p {
-            background-color: #ffccd5;
+            background-color: var(--button-bg);
             border-radius: 10px;
             padding: 10px;
             margin: 15px 0;
@@ -102,7 +122,7 @@
         }
 
         .contact p:hover, .contact p.active {
-            background-color: #ff8a9a;
+            background-color: var(--button-hover-bg);
             color: white;
         }
 
@@ -154,21 +174,21 @@
         }
 
         .social-media a {
-            color: #3a1c71;
+            color: var(--social-color);
             text-decoration: none;
             transition: transform 0.3s, color 0.3s;
         }
 
         .social-media i {
             font-size: 26px;
-            background-color: #ffccd5;
+            background-color: var(--button-bg);
             border-radius: 50%;
             padding: 10px;
         }
 
         .social-media a:hover {
             transform: scale(1.2);
-            color: #ff8a9a;
+            color: var(--button-hover-bg);
         }
 
         .separator {
@@ -192,7 +212,7 @@
 
         .like-btn i {
             font-size: 24px;
-            color: #ff8a9a;
+            color: var(--button-hover-bg);
         }
 
         .like-btn:hover {
@@ -202,40 +222,27 @@
         .count {
             font-size: 14px;
             margin-top: 5px;
-            color: #333;
+            color: var(--text-color);
         }
 
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .overlay img {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 10px;
-        }
-
-        .overlay .close-btn {
+        .theme-toggle {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: white;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--text-color);
+            background-color: var(--button-bg);
             border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 24px;
-            cursor: pointer;
+            padding: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            background-color: var(--button-hover-bg);
         }
 
         @media (max-width: 768px) {
@@ -303,10 +310,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
     <div class="container">
         <div class="profile-card">
             <div class="profile-header">
-                <div class="profile-pic" onclick="showOverlay()"><img src="data/team-3.jpg"></div>
+                <div class="profile-pic"></div>
                 <h2>امیرعباس فغفوری</h2>
                 <h3>amirabbas fgf</h3>
             </div>
@@ -317,27 +325,27 @@
                         <div class="options" id="options">
                             <div onclick="copyToClipboard('09101476054')"><i class="fas fa-copy"></i> کپی</div>
                             <div onclick="openDialer('09101476054')"><i class="fas fa-phone"></i> تماس</div>
+                            <div onclick="sendSMS('09101476054')"><i class="fas fa-sms"></i> پیامک</div>
+                            <div onclick="openWhatsApp('09101476054')"><i class="fab fa-whatsapp"></i> واتس‌اپ</div>
                         </div>
                     </p>
                     <div class="copy-message">شماره کپی شد!</div>
                 </div>
             </div>
             <div class="social-media">
-                <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-telegram"></i></a>
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
             </div>
         </div>
-    </div>
-
-    <div class="overlay" id="overlay">
-        <img src="https://via.placeholder.com/400" alt="Profile Picture">
-        <button class="close-btn" onclick="hideOverlay()">&times;</button>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const phoneNumberElement = document.getElementById('phone-number');
+            const themeToggle = document.getElementById('theme-toggle');
+
             phoneNumberElement.addEventListener('mouseenter', showOptions);
             phoneNumberElement.addEventListener('click', showOptions);
             document.addEventListener('click', function(event) {
@@ -345,6 +353,11 @@
                     hideOptions();
                 }
             });
+
+            themeToggle.addEventListener('click', toggleTheme);
+
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            setTheme(currentTheme);
         });
 
         function showOptions() {
@@ -370,12 +383,23 @@
             window.location.href = `tel:${number}`;
         }
 
-        function showOverlay() {
-            document.getElementById('overlay').style.display = 'flex';
+        function sendSMS(number) {
+            window.location.href = `sms:${number}`;
         }
 
-        function hideOverlay() {
-            document.getElementById('overlay').style.display = 'none';
+        function openWhatsApp(number) {
+            window.location.href = `https://wa.me/${number}`;
+        }
+
+        function toggleTheme() {
+            const theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+            setTheme(theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        function setTheme(theme) {
+            document.body.dataset.theme = theme;
+            document.getElementById('theme-toggle').innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         }
     </script>
 </body>
