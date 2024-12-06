@@ -1,3 +1,3 @@
 User-agent: *
-Disallow:
-Sitemap: https://yoursite.com/sitemap.xml
+allow: /*
+Sitemap: https://amirabbasfgf.github.io/sitemap.xml
