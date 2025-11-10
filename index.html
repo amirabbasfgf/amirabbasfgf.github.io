@@ -1,541 +1,378 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" class="h-full">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<head>
+<html lang="en">
 
-        
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>سایت شخصی امیرعباس فغفوری</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
-  <link rel="icon" sizes="192x192" href="assets/icons/android-chrome-192x192.png" />
-  <link rel="icon" sizes="512x512" href="assets/icons/android-chrome-512x512.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
-  <meta name="description" content="سایت و رزومه ی شخصی امیرعباس فغفوری">
+  <head>
+    <meta charset="UTF-8">
+    <title>3D Room - Pure CSS Art</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
 
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <script>
-    if (localStorage.theme === "dark" || !"theme" in localStorage) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  </script>
-</head>
-
-<body
-  class="bg-slate-50 antialiased text-slate-600 mx-4 sm:mx-6 mb-4 dark:bg-[#131313] dark:text-slate-400 selection:bg-[#007bff] selection:text-white">
-  <div class="max-w-7xl mx-auto">
-    <header class="py-4">
-      <div class="flex justify-between items-center">
-        <button id="toggleMenu" data-toggle="false" class="z-20  hover:cursor-pointer sm:hidden">
-          <svg class="icon" id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
-          <svg id="closeIcon" class="hidden icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-        <div class="rtl:pr-2 ltr:pl-2 hidden sm:flex sm:items-center">
-          <!-- Add "index.html" if you are not using a local server or host -->
-          <a href="index.html" draggable="false" class="flex items-center rtl:ml-6 ltr:mr-6">
-            <img src="assets/images/logo.svg" alt="امیرعباس فغفوری" draggable="false"
-              class="h-9 w-auto rtl:ml-2 ltr:mr-2 drag-none rounded-lg" />
-            <img src="assets/images/logo-text.svg" alt="امیرعباس فغفوری" draggable="false" class="h-6 drag-none" />
-          </a>
-        </div>
-        <div class="flex flex-row-reverse items-center rtl:gap-x-2 ltr:gap-x-1">
-          <button id="toggleDarkMode" title="Press N to toggle dark mode">
-            <svg class="icon hidden" id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-            <svg class="icon hidden" id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5" />
-              <line x1="12" y1="1" x2="12" y2="3" />
-              <line x1="12" y1="21" x2="12" y2="23" />
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-              <line x1="1" y1="12" x2="3" y2="12" />
-              <line x1="21" y1="12" x2="23" y2="12" />
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-            </svg>
-          </button>
-        
-          </a>
-        </div>
-      </div>
-      <nav id="mobileMenu" class="hidden mt-4 mb-2 rtl:mr-2.5 ltr:ml-2.5 sm:hidden">
-      </nav>
-    </header>
-    <div class="bg-white flex flex-col shadow-md rounded-3xl lg:flex-row dark:bg-zinc-900">
-      <aside class="bg-secondary rounded-3xl p-8 dark:bg-gray-800">
-        <div class="flex flex-col justify-center items-center sm:items-unset lg:sticky lg:top-8 lg:w-[16rem]">
-          <div class="flex flex-col sm:flex-row sm:justify-around sm:items-center mb-4 lg:flex-col animate-fadeInUp">
-            <div class="text-center max-w-[16rem]">
-              <!-- Profile Picture / تصویر پروفایل -->
-            <img src="assets/images/de.webp" alt="امیرعباس فغفوری" class="w-full mb-6" />
-            <!-- Fullname / نام کامل -->
-            <span class="text-2xl text-slate-200 font-medium mb-2">امیرعباس فغفوری</span>
-            <div class="flex flex-wrap justify-center mb-2">
-              <!-- Tags / عناوین-->
-              <span class="tag">برنامه نویس</span>
-              <span class="tag">seo</span>
-            </div>
-            </div>
-            <!-- Personal Information / اطاعات شخصی -->
-            <table class="w-full text-slate-300 text-sm max-w-[250px] mb-4 sm:m-0 lg:mb-4">
-              <tbody>
-            
-                <tr class="flex justify-between mb-4">
-                  <td>تاریخ تولد</td>
-                  <td>1388/02/21</td>
-                </tr>
-                <tr class="flex justify-between mb-4">
-                  <td>ملیت</td>
-                  <td>ایرانی</td>
-                </tr>
-                <tr class="flex justify-between mb-4">
-                  <td>موقعیت فعلی</td>
-                  <td>ایران، زنجان</td>
-                </tr>
-                <tr class="border-1 border-t border-slate-700 dark:border-slate-600 w-1/2 block mx-auto mb-4"></tr>
-                <tr class="flex justify-between mb-4">
-                  <td>حقوق درخواستی</td>
-                  <td>تعیین نشده</td>
-                </tr>
-                <tr class="border-1 border-t border-slate-700 dark:border-slate-600 w-1/2 block mx-auto mb-4"></tr>
-                <tr class="flex justify-between mb-4">
-                  <td>موبایل</td>
-                  <td>09101476054</td>
-                </tr>
-                <tr class="flex justify-between">
-                  <td>ایمیل</td>
-                  <td>amirabbasfgf@gmail.com</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- Resume Pdf File Link / لینک فایل پی دی اف رزومه -->
-          <a href="#" class="btn-cta"> دانلود فایل رزومه </a>
-        </div>
-      </aside>
-      <main class="bg-white p-6 lg:py-8 lg:px-10 rounded-3xl dark:bg-zinc-900/90 animate-fadeInUp">
-
-        <div class="mb-10">
-          <div class="flex items-center text-slate-900 dark:text-slate-200 mb-2">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="16" x2="12" y2="12" />
-              <line x1="12" y1="8" x2="12.01" y2="8" />
-            </svg>
-            <h1 class="mx-2 text-2xl font-bold">
-              رزومه امیرعباس فغفوری
-            </h1>
-          </div>
-          <p>
-            من امیرعباس فغفوری یک برنامه‌نویس و طراح وب با تمرکز بر فریم‌ورک Django هستم که در زمینه ساخت سایت‌ها و اپلیکیشن‌های حرفه‌ای فعالیت می‌کنم. تجربه‌های من شامل پروژه‌هایی مانند مدیریت گیم‌نت، طراحی سایت‌های گردشگری مشابه TripAdvisor، و توسعه سیستم‌های چندزبانه است. به جزئیات، زیبایی بصری، و کاربرپسندی اهمیت ویژه‌ای می‌دهم و پروژه‌هایم را با ترکیب خلاقیت و منطق پیش می‌برم. همچنین، در حال گسترش مهارت‌های خود در زمینه استفاده از React برای طراحی فرانت‌اند حرفه‌ای هستم تا سایت‌هایی مدرن و تعاملی ایجاد کنم. هدف من، ساخت پروژه‌هایی است که نه تنها کاربردی باشند، بلکه تجربه‌ای به‌یادماندنی برای کاربران فراهم کنند.
-          </p>
-        </div>
-        <!-- Work Exprience / سوابق کاری -->
-        <div class="mb-10">
-          <div class="flex items-center mb-4 text-slate-900 dark:text-slate-200">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
-              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
-              <line x1="6" y1="1" x2="6" y2="4" />
-              <line x1="10" y1="1" x2="10" y2="4" />
-              <line x1="14" y1="1" x2="14" y2="4" />
-            </svg>
-            <h2 class="mx-2 text-2xl font-bold">
-              سوابق شغلی
-            </h2>
-          </div>
-          <!-- Sort: Newest to Oldest / مرتب سازی: جدیدترین تا قدیمی ترین -->
-          <ul class="exp-menu-container">
-            <li class="exp-menu-item">
-              <div class="relative top-[-0.35rem] rtl:pr-4 ltr:pl-4">
-                <div class="text-xl font-semibold text-slate-700 mb-2 dark:text-slate-400">
-                  عنوان اول
-                </div>
-                <div class="text-sm text-slate-500">۱۳۹۵ — ۱۳۹۶</div>
-                <p></p>
-              </div>
-            </li>
-            <li class="exp-menu-item">
-              <div class="relative top-[-0.35rem] rtl:pr-4 ltr:pl-4">
-                <div class="text-xl font-semibold text-slate-700 mb-2 dark:text-slate-400">
-                  عنوان دوم
-                </div>
-                <div class="text-sm text-slate-500">۱۳۹۶ — ۱۳۹۹</div>
-                <p></p>
-              </div>
-            </li>
-            <li class="exp-menu-item">
-              <div class="relative top-[-0.35rem] rtl:pr-4 ltr:pl-4">
-                <div class="text-xl font-semibold mb-2 text-slate-700 dark:text-slate-400">
-                  عنوان سوم
-                </div>
-                <div class="text-sm text-slate-500">۱۳۹۹ — الان</div>
-                <p></p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- Educational Background / سوابق تحصیلی -->
-        <div class="mb-10">
-          <div class="flex items-center mb-4 text-slate-900 dark:text-slate-200">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
-              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
-              <line x1="6" y1="1" x2="6" y2="4" />
-              <line x1="10" y1="1" x2="10" y2="4" />
-              <line x1="14" y1="1" x2="14" y2="4" />
-            </svg>
-            <h2 class="mx-2 text-2xl font-bold">
-              سوابق تحصیلی
-            </h2>
-          </div>
-          <!-- Sort: Newest to Oldest / مرتب سازی: جدیدترین تا قدیمی ترین -->
-          <ul class="exp-menu-container">
-            <li class="exp-menu-item">
-              <div class="relative top-[-0.35rem] rtl:pr-4 ltr:pl-4">
-                <div class="text-xl font-semibold text-slate-700 mb-2 dark:text-slate-400">
-                  عنوان اول
-                </div>
-                <div class="text-sm text-slate-500">۱۳۹۵ — ۱۳۹۶</div>
-                <p></p>
-              </div>
-            </li>
-            <li class="exp-menu-item">
-              <div class="relative top-[-0.35rem] rtl:pr-4 ltr:pl-4">
-                <div class="text-xl font-semibold text-slate-700 mb-2 dark:text-slate-400">
-                  عنوان دوم
-                </div>
-                <div class="text-sm text-slate-500">۱۳۹۶ — ۱۳۹۹</div>
-                <p></p>
-              </div>
-            </li>
-            <li class="exp-menu-item">
-              <div class="relative top-[-0.35rem] rtl:pr-4 ltr:pl-4">
-                <div class="text-xl font-semibold mb-2 text-slate-700 dark:text-slate-400">
-                  عنوان سوم
-                </div>
-                <div class="text-sm text-slate-500">۱۳۹۹ — ۱۴۰۰</div>
-                <p></p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- The Skills / مهارت ها -->
-        <div class="mb-10">
-          <div class="flex items-center mb-4 text-slate-900 dark:text-slate-200">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-            </svg>
-            <p class="mx-2 text-2xl font-bold">
-              مهارت ها
-            </p>
-          </div>
-          <div class="grid grid-cols1 sm:grid-cols-2 gap-y-4 gap-x-6">
-            <div>
-              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-slate-400">python/django</span>
-              <div class="w-full bg-primary/25 rounded-full">
-                <div class="progress-bar" style="width: 90%;">
-                  <span class="px-2">90%</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-slate-400">seo</span>
-              <div class="w-full bg-primary/25 rounded-full">
-                <div class="progress-bar" style="width: 80%;">
-                  <span class="px-2">80%</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-slate-400">react.js</span>
-              <div class="w-full bg-primary/25 rounded-full">
-                <div class="progress-bar" style="width: 50%;">
-                  <span class="px-2">50%</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-slate-400">git/github</span>
-              <div class="w-full bg-primary/25 rounded-full">
-                <div class="progress-bar" style="width: 100%;">
-                  <span class="px-2">100%</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-slate-400">mysql</span>
-              <div class="w-full bg-primary/25 rounded-full">
-                <div class="progress-bar" style="width: 60%;">
-                  <span class="px-2">60%</span>
-                </div>
-              </div>
-            </div>
-        
-          </div>
-        </div>
-        <!-- The Languages / زبان ها -->
-        <div class="mb-10">
-          <div class="flex items-center mb-4 text-slate-900 dark:text-slate-200">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-            <p class="mx-2 text-2xl font-bold">
-              زبان ها
-            </p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
-            <div class="flex items-center justify-between">
-              <span class="pl-2 font-medium text-slate-700 text-md dark:text-slate-400">فارسی</span>
-              <ul class="dot-container">
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-              </ul>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="pl-2 font-medium text-slate-700 text-md dark:text-slate-400">انگلیسی</span>
-              <ul class="dot-container">
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot-null"></li>
-                <li class="dot-null"></li>
-              </ul>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="pl-2 font-medium text-slate-700 text-md dark:text-slate-400">ترکی</span>
-              <ul class="dot-container">
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot-null"></li>
-                <li class="dot-null"></li>
-                <li class="dot-null"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- The Favorites(Hobbies) / علاقه مندی ها -->
-        <div class="mb-10">
-          <div class="flex items-center mb-2 text-slate-900 dark:text-slate-200">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
-            <p class="mx-2 text-2xl font-bold dark:text-slate-200">
-              علاقه ها
-            </p>
-          </div>
-          <div class="flex flex-wrap">
-            <span class="favorite-item">یادگیری</span>
-            <span class="favorite-item">کارآفرینی</span>
-            <span class="favorite-item">فلسفه</span>
-            <span class="favorite-item">کار تیمی</span>
-            <span class="favorite-item">خلاقیت</span>
-            <span class="favorite-item">توسعه</span>
-            <span class="favorite-item">تکنولوژی</span>
-          </div>
-        </div>
-        <!-- Work Samples / نمونه کارها -->
-        <div class="mb-4">
-          <div class="flex items-center mb-4 text-slate-900 dark:text-slate-200">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-            </svg>
-            <p class="mx-2 text-2xl font-bold ">
-              نمونه کارها
-            </p>
-          </div>
-          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="#showModal1" class="btn-modal">
-              <img data-href="#showModal1" src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A wallpaper">
-            </a>
-            <a href="#showModal2" class="btn-modal">
-              <img data-href="#showModal2" src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A wallpaper">
-            </a>
-            <a href="#showModal3" class="btn-modal">
-              <img data-href="#showModal3" src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A wallpaper">
-            </a>
-          </div>
-          <!-- Modals -->
-          <div id="showModal1" class="modal hidden fixed z-30 inset-0 overflow-y-auto">
-            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-              <div class="modal-area fixed inset-0 bg-slate-500 bg-opacity-75 transition-opacity">
-              </div>
-              <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-              <div
-                class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full">
-                <div
-                  class="flex justify-between items-center p-5 rounded-t border-b dark:border-zinc-800  dark:bg-zinc-900">
-                  <h3 class="text-xl font-bold text-slate-900 lg:text-2xl dark:text-slate-200">
-                    نمونه کار اول
-                  </h3>
-                  <button type="button"
-                    class="btn-close text-slate-400 bg-transparent hover:bg-slate-200 hover:text-slate-900 rounded-lg text-sm p-1.5 rtl:mr-auto ltr:ml-auto inline-flex items-center dark:hover:bg-slate-600 dark:hover:text-white"
-                    data-modal-toggle="defaultModal">
-                    <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="../www.w3.org/2000/svg.html">
-                      <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="p-6 space-y-6 dark:bg-zinc-900">
-                  <img src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
-                  <p class="rtl:text-right ltr:text-left leading-relaxed text-slate-600 dark:text-slate-400">
-                    
-                  </p>
-                </div>
-                <div
-                  class="flex items-center p-6 space-x-2 rounded-b border-t border-slate-200 dark:border-zinc-800  dark:bg-zinc-900">
-                  <a href="#"
-                    class="flex flex-row-reverse items-center text-white text-bold bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg px-5 py-3 text-base text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">
-                    <p>دانلود فایل نمونه کار</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="rtl:ml-2 ltr:mr-2" width="24" height="24"
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="showModal2" class="modal hidden fixed z-30 inset-0 overflow-y-auto">
-            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-              <div class="modal-area fixed inset-0 bg-slate-500 bg-opacity-75 transition-opacity">
-              </div>
-              <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-              <div
-                class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full">
-                <div
-                  class="flex justify-between items-center p-5 rounded-t border-b dark:border-zinc-800  dark:bg-zinc-900">
-                  <h3 class="text-xl font-bold text-slate-900 lg:text-2xl dark:text-slate-200">
-                    نمونه کار دوم
-                  </h3>
-                  <button type="button"
-                    class="btn-close text-slate-400 bg-transparent hover:bg-slate-200 hover:text-slate-900 rounded-lg text-sm p-1.5 rtl:mr-auto ltr:ml-auto inline-flex items-center dark:hover:bg-slate-600 dark:hover:text-white"
-                    data-modal-toggle="defaultModal">
-                    <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="../www.w3.org/2000/svg.html">
-                      <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="p-6 space-y-6 dark:bg-zinc-900">
-                  <img src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
-                  <p class="rtl:text-right ltr:text-left leading-relaxed text-slate-600 dark:text-slate-400">
-                    
-                  </p>
-                </div>
-                <div
-                  class="flex items-center p-6 space-x-2 rounded-b border-t border-slate-200 dark:border-zinc-800  dark:bg-zinc-900">
-                  <a href="#"
-                    class="flex flex-row-reverse items-center text-white text-bold bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg px-5 py-3 text-base text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">
-                    <p>دانلود فایل نمونه کار</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="rtl:ml-2 ltr:mr-2" width="24" height="24"
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="showModal3" class="modal hidden fixed z-30 inset-0 overflow-y-auto">
-            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-              <div class="modal-area fixed inset-0 bg-slate-500 bg-opacity-75 transition-opacity">
-              </div>
-              <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-              <div
-                class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full">
-                <div
-                  class="flex justify-between items-center p-5 rounded-t border-b dark:border-zinc-800  dark:bg-zinc-900">
-                  <h3 class="text-xl font-bold text-slate-900 lg:text-2xl dark:text-slate-200">
-                    نمونه کار سوم
-                  </h3>
-                  <button type="button"
-                    class="btn-close text-slate-400 bg-transparent hover:bg-slate-200 hover:text-slate-900 rounded-lg text-sm p-1.5 rtl:mr-auto ltr:ml-auto inline-flex items-center dark:hover:bg-slate-600 dark:hover:text-white"
-                    data-modal-toggle="defaultModal">
-                    <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="../www.w3.org/2000/svg.html">
-                      <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="p-6 space-y-6 dark:bg-zinc-900">
-                  <img src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
-                  <p class="rtl:text-right ltr:text-left leading-relaxed text-slate-600 dark:text-slate-400">
-                    
-                  </p>
-                </div>
-                <div
-                  class="flex items-center p-6 space-x-2 rounded-b border-t border-slate-200 dark:border-zinc-800  dark:bg-zinc-900">
-                  <a href="#"
-                    class="flex flex-row-reverse items-center text-white text-bold bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg px-5 py-3 text-base text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">
-                    <p>دانلود فایل نمونه کار</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="rtl:ml-2 ltr:mr-2" width="24" height="24"
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-    <footer class="mx-auto text-center py-8">
-      <p class="text-slate-500 ltr">
-        امیرعباس فغفوری
-      </p>
-    </footer>
+  </head>
+    
+  <body>
+  <div class="house" id="h"> 
+  <div class="h-lights">
+    <div class="h-light"></div>
+    <div class="h-light"></div>
+    <div class="h-light"></div>
+    <div class="h-light"></div>
+    <div class="h-light"></div>
+    <div class="h-light"></div>
   </div>
-  <script src="assets/js/main.js" defer></script>
-</body>
+  <div class="h-shadow"></div>
+  <div class="alt">
+    <div class="alt__front face"> </div>
+    <div class="alt__back face"> </div>
+    <div class="alt__right face"> </div>
+    <div class="alt__left face"> </div>
+    <div class="alt__top face"> 
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+    </div>
+    <div class="alt__bottom face"> </div>
+  </div>
+  <div class="alb">
+    <div class="alb__front face"> </div>
+    <div class="alb__back face"> </div>
+    <div class="alb__right face"> </div>
+    <div class="alb__left face"> </div>
+    <div class="alb__top face"> </div>
+    <div class="alb__bottom face"> </div>
+  </div>
+  <div class="arb">
+    <div class="arb__front face"> </div>
+    <div class="arb__back face"> </div>
+    <div class="arb__right face"> </div>
+    <div class="arb__left face"> </div>
+    <div class="arb__top face"> </div>
+    <div class="arb__bottom face"> </div>
+  </div>
+  <div class="blt">
+    <div class="blt__front face"> </div>
+    <div class="blt__back face"> </div>
+    <div class="blt__right face"> </div>
+    <div class="blt__left face"> </div>
+    <div class="blt__top face"> </div>
+    <div class="blt__bottom face"> </div>
+  </div>
+  <div class="blt2">
+    <div class="blt2__front face"> </div>
+    <div class="blt2__back face"> </div>
+    <div class="blt2__right face"> </div>
+    <div class="blt2__left face"> </div>
+    <div class="blt2__top face"> </div>
+    <div class="blt2__bottom face"> </div>
+  </div>
+  <div class="blb">
+    <div class="blb__front face"> </div>
+    <div class="blb__back face"> </div>
+    <div class="blb__right face"> </div>
+    <div class="blb__left face"> </div>
+    <div class="blb__top face"> </div>
+    <div class="blb__bottom face"> </div>
+  </div>
+  <div class="blb2">
+    <div class="blb2__front face"> </div>
+    <div class="blb2__back face"> </div>
+    <div class="blb2__right face"> </div>
+    <div class="blb2__left face"> </div>
+    <div class="blb2__top face"> </div>
+    <div class="blb2__bottom face"> </div>
+  </div>
+  <div class="puerta-c">
+    <div class="puerta">
+      <div class="puerta__front face"> </div>
+      <div class="puerta__back face"> </div>
+      <div class="puerta__right face"> </div>
+      <div class="puerta__left face"> </div>
+      <div class="puerta__top face"> </div>
+      <div class="puerta__bottom face"> </div>
+    </div>
+    <div class="puerta-l">
+      <div class="puerta-l__front face"> </div>
+      <div class="puerta-l__back face"> </div>
+      <div class="puerta-l__right face"> </div>
+      <div class="puerta-l__left face"> </div>
+      <div class="puerta-l__top face"> </div>
+      <div class="puerta-l__bottom face"> </div>
+    </div>
+    <div class="puerta-r">
+      <div class="puerta-r__front face"> </div>
+      <div class="puerta-r__back face"> </div>
+      <div class="puerta-r__right face"> </div>
+      <div class="puerta-r__left face"> </div>
+      <div class="puerta-r__top face"> </div>
+      <div class="puerta-r__bottom face"> </div>
+    </div>
+    <div class="puerta-t">
+      <div class="puerta-t__front face"> </div>
+      <div class="puerta-t__back face"> </div>
+      <div class="puerta-t__right face"> </div>
+      <div class="puerta-t__left face"> </div>
+      <div class="puerta-t__top face"> </div>
+      <div class="puerta-t__bottom face"> </div>
+    </div>
+  </div>
+  <div class="cuadro-l">
+    <div class="cuadro-l__front face"> </div>
+    <div class="cuadro-l__back face"> </div>
+    <div class="cuadro-l__right face"> </div>
+    <div class="cuadro-l__left face"> </div>
+    <div class="cuadro-l__top face"> </div>
+    <div class="cuadro-l__bottom face"> </div>
+  </div>
+  <div class="cuadro-r">
+    <div class="cuadro-r__front face"> </div>
+    <div class="cuadro-r__back face"> </div>
+    <div class="cuadro-r__right face"> </div>
+    <div class="cuadro-r__left face"> </div>
+    <div class="cuadro-r__top face"> </div>
+    <div class="cuadro-r__bottom face"> </div>
+  </div>
+  <div class="librero">
+    <div class="librero__front face"> </div>
+    <div class="librero__back face"> </div>
+    <div class="librero__right face"> </div>
+    <div class="librero__left face"> </div>
+    <div class="librero__top face"> </div>
+    <div class="librero__bottom face">    </div>
+  </div>
+  <div class="libros"> 
+    <div class="libro">
+      <div class="libro__front face"> </div>
+      <div class="libro__back face"> </div>
+      <div class="libro__right face"> </div>
+      <div class="libro__left face"> </div>
+      <div class="libro__top face"> </div>
+      <div class="libro__bottom face"> </div>
+    </div>
+    <div class="libro">
+      <div class="libro__front face"> </div>
+      <div class="libro__back face"> </div>
+      <div class="libro__right face"> </div>
+      <div class="libro__left face"> </div>
+      <div class="libro__top face"> </div>
+      <div class="libro__bottom face"> </div>
+    </div>
+    <div class="libro">
+      <div class="libro__front face"> </div>
+      <div class="libro__back face"> </div>
+      <div class="libro__right face"> </div>
+      <div class="libro__left face"> </div>
+      <div class="libro__top face"> </div>
+      <div class="libro__bottom face"> </div>
+    </div>
+    <div class="libro">
+      <div class="libro__front face"> </div>
+      <div class="libro__back face"> </div>
+      <div class="libro__right face"> </div>
+      <div class="libro__left face"> </div>
+      <div class="libro__top face"> </div>
+      <div class="libro__bottom face"> </div>
+    </div>
+    <div class="libro">
+      <div class="libro__front face"> </div>
+      <div class="libro__back face"> </div>
+      <div class="libro__right face"> </div>
+      <div class="libro__left face"> </div>
+      <div class="libro__top face"> </div>
+      <div class="libro__bottom face"> </div>
+    </div>
+    <div class="libro">
+      <div class="libro__front face"> </div>
+      <div class="libro__back face"> </div>
+      <div class="libro__right face"> </div>
+      <div class="libro__left face"> </div>
+      <div class="libro__top face"> </div>
+      <div class="libro__bottom face"> </div>
+    </div>
+  </div>
+  <div class="fotos"> 
+    <div class="foto">
+      <div class="foto__front face"> </div>
+      <div class="foto__back face"> </div>
+      <div class="foto__right face"> </div>
+      <div class="foto__left face"> </div>
+      <div class="foto__top face"> </div>
+      <div class="foto__bottom face"> </div>
+    </div>
+    <div class="foto">
+      <div class="foto__front face"> </div>
+      <div class="foto__back face"> </div>
+      <div class="foto__right face"> </div>
+      <div class="foto__left face"> </div>
+      <div class="foto__top face"> </div>
+      <div class="foto__bottom face"> </div>
+    </div>
+  </div>
+  <div class="cajas"> 
+    <div class="caja">
+      <div class="caja__front face"> </div>
+      <div class="caja__back face"> </div>
+      <div class="caja__right face"> </div>
+      <div class="caja__left face"> </div>
+      <div class="caja__top face"> </div>
+      <div class="caja__bottom face"> </div>
+    </div>
+    <div class="caja">
+      <div class="caja__front face"> </div>
+      <div class="caja__back face"> </div>
+      <div class="caja__right face"> </div>
+      <div class="caja__left face"> </div>
+      <div class="caja__top face"> </div>
+      <div class="caja__bottom face"> </div>
+    </div>
+    <div class="caja">
+      <div class="caja__front face"> </div>
+      <div class="caja__back face"> </div>
+      <div class="caja__right face"> </div>
+      <div class="caja__left face"> </div>
+      <div class="caja__top face"> </div>
+      <div class="caja__bottom face"> </div>
+    </div>
+  </div>
+  <div class="tv">
+    <div class="tv__front face"> </div>
+    <div class="tv__back face"> </div>
+    <div class="tv__right face"> </div>
+    <div class="tv__left face"> </div>
+    <div class="tv__top face"> </div>
+    <div class="tv__bottom face"> </div>
+  </div>
+  <div class="repisa-t">
+    <div class="repisa-t__front face"> </div>
+    <div class="repisa-t__back face"> </div>
+    <div class="repisa-t__right face"> </div>
+    <div class="repisa-t__left face"> </div>
+    <div class="repisa-t__top face"> </div>
+    <div class="repisa-t__bottom face"> </div>
+  </div>
+  <div class="repisa-b">
+    <div class="repisa-b__front face"> </div>
+    <div class="repisa-b__back face"> </div>
+    <div class="repisa-b__right face"> </div>
+    <div class="repisa-b__left face"> </div>
+    <div class="repisa-b__top face"> </div>
+    <div class="repisa-b__bottom face"> </div>
+  </div>
+  <div class="bocina-l">
+    <div class="bocina-l__front face"> </div>
+    <div class="bocina-l__back face"> </div>
+    <div class="bocina-l__right face"> </div>
+    <div class="bocina-l__left face"> </div>
+    <div class="bocina-l__top face"> </div>
+    <div class="bocina-l__bottom face"> </div>
+  </div>
+  <div class="bocina-r">
+    <div class="bocina-r__front face"> </div>
+    <div class="bocina-r__back face"> </div>
+    <div class="bocina-r__right face"> </div>
+    <div class="bocina-r__left face"> </div>
+    <div class="bocina-r__top face"> </div>
+    <div class="bocina-r__bottom face"> </div>
+  </div>
+  <div class="muro">
+    <div class="muro__front face"> </div>
+    <div class="muro__back face"> </div>
+    <div class="muro__right face"> </div>
+    <div class="muro__left face"> </div>
+    <div class="muro__top face"> </div>
+    <div class="muro__bottom face"> </div>
+  </div>
+  <div class="sillon-c">
+    <div class="sillon-b">
+      <div class="sillon-b__front face"> </div>
+      <div class="sillon-b__back face"> </div>
+      <div class="sillon-b__right face"> </div>
+      <div class="sillon-b__left face"> </div>
+      <div class="sillon-b__top face"> </div>
+      <div class="sillon-b__bottom face"> </div>
+    </div>
+    <div class="sillon-t">
+      <div class="sillon-t__front face"> </div>
+      <div class="sillon-t__back face"> </div>
+      <div class="sillon-t__right face"> </div>
+      <div class="sillon-t__left face"> </div>
+      <div class="sillon-t__top face"> </div>
+      <div class="sillon-t__bottom face"> </div>
+    </div>
+    <div class="sillon-l">
+      <div class="sillon-l__front face"> </div>
+      <div class="sillon-l__back face"> </div>
+      <div class="sillon-l__right face"> </div>
+      <div class="sillon-l__left face"> </div>
+      <div class="sillon-l__top face"> </div>
+      <div class="sillon-l__bottom face"> </div>
+    </div>
+    <div class="sillon-r">
+      <div class="sillon-r__front face"> </div>
+      <div class="sillon-r__back face"> </div>
+      <div class="sillon-r__right face"> </div>
+      <div class="sillon-r__left face"> </div>
+      <div class="sillon-r__top face"> </div>
+      <div class="sillon-r__bottom face"> </div>
+    </div>
+  </div>
+  <div class="mesa-c">
+    <div class="mesa">
+      <div class="mesa__front face"> </div>
+      <div class="mesa__back face"> </div>
+      <div class="mesa__right face"> </div>
+      <div class="mesa__left face"> </div>
+      <div class="mesa__top face"> </div>
+      <div class="mesa__bottom face"> </div>
+    </div>
+    <div class="mesa-p">
+      <div class="mesa-p__front face"> </div>
+      <div class="mesa-p__back face"> </div>
+      <div class="mesa-p__right face"> </div>
+      <div class="mesa-p__left face"> </div>
+      <div class="mesa-p__top face"> </div>
+      <div class="mesa-p__bottom face"> </div>
+    </div>
+    <div class="mesa-p">
+      <div class="mesa-p__front face"> </div>
+      <div class="mesa-p__back face"> </div>
+      <div class="mesa-p__right face"> </div>
+      <div class="mesa-p__left face"> </div>
+      <div class="mesa-p__top face"> </div>
+      <div class="mesa-p__bottom face"> </div>
+    </div>
+    <div class="mesa-p">
+      <div class="mesa-p__front face"> </div>
+      <div class="mesa-p__back face"> </div>
+      <div class="mesa-p__right face"> </div>
+      <div class="mesa-p__left face"> </div>
+      <div class="mesa-p__top face"> </div>
+      <div class="mesa-p__bottom face"> </div>
+    </div>
+    <div class="mesa-p">
+      <div class="mesa-p__front face"> </div>
+      <div class="mesa-p__back face"> </div>
+      <div class="mesa-p__right face"> </div>
+      <div class="mesa-p__left face"> </div>
+      <div class="mesa-p__top face"> </div>
+      <div class="mesa-p__bottom face"> </div>
+    </div>
+    <div class="mesa-shadow"></div>
+  </div>
+  <div class="tablet">
+    <div class="tablet__front face"> </div>
+    <div class="tablet__back face"> </div>
+    <div class="tablet__right face"> </div>
+    <div class="tablet__left face"> </div>
+    <div class="tablet__top face"> </div>
+    <div class="tablet__bottom face">    </div>
+  </div>
+</div>
+    <script  src="./script.js"></script>
 
-
-<!-- Mirrored from iresume-html-template.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 May 2023 06:11:17 GMT -->
+  </body>
+  
 </html>
